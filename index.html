@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BabyCare - Cuidado del Bebé</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🍼 BabyCare</h1>
+        <p>Comparte y aprende sobre el cuidado de bebés (0-2 años)</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('tips')" class="nav-btn active">Consejos</button>
+        <button onclick="showSection('milestones')" class="nav-btn">Hitos</button>
+        <button onclick="showSection('share')" class="nav-btn">Compartir</button>
+    </nav>
+
+    <main>
+        <!-- Sección de Consejos -->
+        <section id="tips" class="section active">
+            <h2>Consejos de Cuidado</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>0-6 meses</h3>
+                    <ul>
+                        <li>Lactancia cada 2-3 horas</li>
+                        <li>Dormir boca arriba</li>
+                        <li>Contacto piel con piel</li>
+                        <li>Vacunas según calendario</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h3>6-12 meses</h3>
+                    <ul>
+                        <li>Introducir alimentos sólidos</li>
+                        <li>Gateo y primeros pasos</li>
+                        <li>Rutina de sueño establecida</li>
+                        <li>Juegos de estimulación</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h3>12-24 meses</h3>
+                    <ul>
+                        <li>Primeras palabras</li>
+                        <li>Caminar independiente</li>
+                        <li>Alimentación variada</li>
+                        <li>Control de esfínteres inicial</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Hitos del Desarrollo -->
+        <section id="milestones" class="section">
+            <h2>Hitos del Desarrollo</h2>
+            <div class="milestone-tracker">
+                <div class="age-group">
+                    <h3>2 meses</h3>
+                    <div class="milestone">
+                        <input type="checkbox" id="smile"> 
+                        <label for="smile">Primera sonrisa social</label>
+                    </div>
+                    <div class="milestone">
+                        <input type="checkbox" id="head"> 
+                        <label for="head">Levanta la cabeza</label>
+                    </div>
+                </div>
+                <div class="age-group">
+                    <h3>6 meses</h3>
+                    <div class="milestone">
+                        <input type="checkbox" id="sit"> 
+                        <label for="sit">Se sienta con apoyo</label>
+                    </div>
+                    <div class="milestone">
+                        <input type="checkbox" id="solid"> 
+                        <label for="solid">Come alimentos sólidos</label>
+                    </div>
+                </div>
+                <div class="age-group">
+                    <h3>12 meses</h3>
+                    <div class="milestone">
+                        <input type="checkbox" id="walk"> 
+                        <label for="walk">Primeros pasos</label>
+                    </div>
+                    <div class="milestone">
+                        <input type="checkbox" id="word"> 
+                        <label for="word">Primera palabra</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección para Compartir Experiencias -->
+        <section id="share" class="section">
+            <h2>Comparte tu Experiencia</h2>
+            <form id="shareForm">
+                <div class="form-group">
+                    <label for="parentName">Tu nombre:</label>
+                    <input type="text" id="parentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="babyAge">Edad del bebé:</label>
+                    <select id="babyAge" required>
+                        <option value="">Selecciona...</option>
+                        <option value="0-3m">0-3 meses</option>
+                        <option value="3-6m">3-6 meses</option>
+                        <option value="6-12m">6-12 meses</option>
+                        <option value="12-18m">12-18 meses</option>
+                        <option value="18-24m">18-24 meses</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="category">Categoría:</label>
+                    <select id="category" required>
+                        <option value="">Selecciona...</option>
+                        <option value="alimentacion">Alimentación</option>
+                        <option value="sueno">Sueño</option>
+                        <option value="desarrollo">Desarrollo</option>
+                        <option value="salud">Salud</option>
+                        <option value="juegos">Juegos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Comparte tu consejo o experiencia:</label>
+                    <textarea id="experience" rows="4" required></textarea>
+                </div>
+                <button type="submit">Compartir</button>
+            </form>
+
+            <div id="experiences">
+                <h3>Experiencias Compartidas</h3>
+                <div id="experiencesList"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
